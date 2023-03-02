@@ -1,0 +1,85 @@
+1)
+a)   public static void main(String[] args) {
+        String letras = "qwertyasdfgzxcvaswda";
+        int contadorLetra=0;
+        char letraBuscada = 'a';
+
+        for (int n=0;n<letras.length();n++){
+           if(letras.charAt(n)==letraBuscada){
+               contadorLetra++;
+           }
+        }
+        System.out.println(contadorLetra);
+    }
+
+
+b)   public static void main(String[] args) {
+       int numeros[] = new int []{4,7,2};
+       int aux=0;
+       String orden = "ascendente";
+
+       if(orden.equals("ascendente")) {
+           for (int n = 0; n < numeros.length; n++) {
+               for (int i = 1; i < numeros.length - n; i++) {
+                   if (numeros[i - 1] > numeros[i]) {
+                       aux = numeros[i - 1];
+                       numeros[i - 1] = numeros[i];
+                       numeros[i] = aux;
+                   }
+               }
+           }
+       }else{
+           for (int n = 0; n < numeros.length; n++) {
+               for (int i = 1; i < numeros.length - n; i++) {
+                   if (numeros[i - 1] < numeros[i]) {
+                       aux = numeros[i - 1];
+                       numeros[i - 1] = numeros[i];
+                       numeros[i] = aux;
+                   }
+               }
+           }
+       }
+       for(int num : numeros){
+           System.out.println(num);
+       }
+    }
+
+
+c)    public static void main(String[] args) {
+       int numeros[] = new int []{4,7,2,6,5,9};
+       int numX=3;
+       int resultado=0;
+
+       for(int n=0;n<numeros.length;n++){
+           if(numeros[n]>numX){
+               resultado=numeros[n]+resultado;
+           }
+       }
+       System.out.println(resultado);
+    }
+
+2)
+a)   public static void main(String[] args) {
+       String abec = "abcdefghijklmnopqrstuvwxyz ";
+       String str1 = "ahola que tal";
+       String resultado="";
+       char aux='b';
+       char a;
+       int pasado;
+
+       for(int n=0;n<str1.length();n++){
+           a=str1.charAt(n);
+            for(int i=0;i<abec.length();i++){
+                if(a==abec.charAt(i)){
+                    if(i+2>27){
+                        pasado=(i+2)-27;
+                        aux=abec.charAt(pasado);
+                    }else{
+                        aux=abec.charAt(i+2);
+                    }
+                }
+            }
+           resultado = resultado+aux;
+       }
+       System.out.println(resultado);
+    }
