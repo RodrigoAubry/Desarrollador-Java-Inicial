@@ -22,11 +22,18 @@ public class Producto {
     public String getDescipcion(){
         return descripcion;
     }
+
+    public LocalDate getFechaDeAlta() {
+        return fechaDeAlta;
+    }
+
     public void setDescipcion(String descripcion){
         this.descripcion=descripcion;
     }
     public void setPrecio(float precio){
         this.precio=precio;
     }
-
+    public float getPrecio(){
+        return precio;
+    }
 }

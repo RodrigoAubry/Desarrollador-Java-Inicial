@@ -15,18 +15,8 @@ public class Persona {
 
     //Metodos
 
-    public int edad(LocalDate fechaDeNacimiento) {
+    public int edad() {
         LocalDate hoy=LocalDate.now();
-       int  eda=hoy.getYear()-fechaDeNacimiento.getYear();
-       return eda;
-    }
-    public LocalDate getFechaDeNacimiento() {
-        return fechaDeNacimiento;
-    }
-    public String getNombre() {
-        return nombre;
-    }
-    public String getApellido() {
-        return apellido;
+        return  (hoy.getYear()-fechaDeNacimiento.getYear());       //Me falta comparar meses y días
     }
 }
