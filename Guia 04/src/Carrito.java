@@ -4,7 +4,6 @@ public class Carrito {
     //Atributos
 
     private Producto[] productos;
-
     private LocalDate fechaDeCompra;
 
     //Constructor
