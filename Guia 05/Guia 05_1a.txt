@@ -1,0 +1,19 @@
+import java.util.Arrays;
+import java.util.Collections;
+public class Main {
+
+    public static void main(String[] args) {
+        Integer[] num = new Integer[3];
+        for (int i = 0; i <args.length-1; i++) {
+            num[i]=Integer.parseInt(args[i]);
+        }
+        String orden=args[3];
+        // System.out.println(orden);
+        if(orden.equals("a")){
+            Arrays.sort(num);
+        }else {
+            Arrays.sort(num,Collections.reverseOrder());
+        }
+        System.out.println(Arrays.toString(num));
+    }
+}

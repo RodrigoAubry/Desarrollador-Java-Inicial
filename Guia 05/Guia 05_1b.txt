@@ -1,0 +1,24 @@
+import java.util.Arrays;
+import java.util.Scanner;
+import java.util.Collections;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scn = new Scanner(System.in);
+        char orden;
+        Integer[] num = new Integer[3];
+        for (int n = 0; n < num.length; n++) {
+            System.out.println("Ingrese un número y presione \"enter\"");
+            num[n]=scn.nextInt();
+        }
+        System.out.println("Ingrese \"a\" si quiere orden ascendente o \"d\" si quiere orden descendente" );
+        orden =scn.next().charAt(0);
+        if(orden=='a'){
+            Arrays.sort(num);
+        }else {
+            Arrays.sort(num,Collections.reverseOrder());
+        }
+        System.out.println(Arrays.toString(num));
+    }
+}

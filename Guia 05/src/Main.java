@@ -1,0 +1,34 @@
+import java.util.Scanner;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.io.IOException;
+public class Main {
+
+    public static void main(String[] args)throws IOException {
+        String archivo="";
+        long resultado=0;
+        Scanner scn = new Scanner(System.in);
+        String sm;
+
+        for (int i = 0; i < args.length; i++) {
+            archivo=args[i];
+        }
+        System.out.println("Ingresar \"s\" para Suma o \"m\" para Multiplicación");
+        sm=scn.next();
+        if (sm.equals("m")){
+            resultado=1;
+        }
+
+        for (String linea : Files.readAllLines(Paths.get(archivo))){
+            for(String archi:linea.split(" ")){
+               int aux = Integer.parseInt(archi);
+               if(sm.equals("s")){
+                   resultado=aux+resultado;
+               }else{
+                   resultado=aux*resultado;
+               }
+            }
+        }
+        System.out.println(resultado);
+    }
+}
