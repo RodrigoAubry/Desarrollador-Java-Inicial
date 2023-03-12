@@ -1,34 +1,65 @@
+import java.util.List;
 import java.util.Scanner;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.io.IOException;
 public class Main {
-
     public static void main(String[] args)throws IOException {
-        String archivo="";
-        long resultado=0;
-        Scanner scn = new Scanner(System.in);
-        String sm;
+        String abec="";
+        String str1 ="";
+        char aux='b';
+        char a;
+        int pasado;
+        String cd;
+        int dez;
+        Scanner cdI = new Scanner(System.in);
+        Scanner dezI=new Scanner(System.in);
+        String resultado="";
 
-        for (int i = 0; i < args.length; i++) {
-            archivo=args[i];
+        List<String> readAllLines = Files.readAllLines(Paths.get(".\\Abecedario.txt"));
+        for (int i = 0; i < readAllLines.size(); i++) {
+            abec = readAllLines.get(i);
         }
-        System.out.println("Ingresar \"s\" para Suma o \"m\" para Multiplicación");
-        sm=scn.next();
-        if (sm.equals("m")){
-            resultado=1;
+        List<String> readEntry = Files.readAllLines(Paths.get(".\\Entrada.txt"));
+        for (int i = 0; i < readEntry.size(); i++) {
+            str1 = readEntry.get(i);
         }
-
-        for (String linea : Files.readAllLines(Paths.get(archivo))){
-            for(String archi:linea.split(" ")){
-               int aux = Integer.parseInt(archi);
-               if(sm.equals("s")){
-                   resultado=aux+resultado;
-               }else{
-                   resultado=aux*resultado;
-               }
+        System.out.println("Ingrese \"c\" si es una Codificación o \"d\" si es una Decodificación");
+        cd=cdI.next();
+        System.out.println("Ingrese el valor del desplazamiento");
+        dez=dezI.nextInt();
+        if(cd.equals("c")){
+            for(int n=0;n<str1.length();n++){
+                a=str1.charAt(n);
+                for(int i=0;i<abec.length();i++){
+                    if(a==abec.charAt(i)){
+                        if(i+dez>27){
+                            pasado=(i+dez)-27;
+                            aux=abec.charAt(pasado);
+                        }else{
+                            aux=abec.charAt(i+dez);
+                        }
+                    }
+                }
+                resultado = resultado+aux;
             }
+        }else{
+            for(int n=0;n<str1.length();n++){
+                a=str1.charAt(n);
+                for(int i=0;i<abec.length();i++){
+                    if(a==abec.charAt(i)){
+                        if(i-dez<0){
+                            pasado=(i-dez)+27;
+                            aux=abec.charAt(pasado);
+                        }else{
+                            aux=abec.charAt(i-dez);
+                        }
+                    }
+                }
+                resultado = resultado+aux;
+            }
+
         }
-        System.out.println(resultado);
+        Files.writeString(Paths.get(".\\Salida.txt"), resultado);
     }
 }
