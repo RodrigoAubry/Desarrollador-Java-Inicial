@@ -19,7 +19,5 @@ public class Main {
 
        System.out.println(car1.precio());
        //System.out.println(cliente.edad());
-
-
     }
 }
