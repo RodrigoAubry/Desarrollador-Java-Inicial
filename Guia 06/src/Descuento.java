@@ -1,7 +1,7 @@
 abstract class Descuento {
 
     //Atrivutos
-    float tp;
+    protected float tp;
     protected float desc;
     protected float base;
 

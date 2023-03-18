@@ -9,6 +9,7 @@ public class DescuentoPorcentaje extends Descuento {
     @Override
     protected void calcularDescuento(){
         float aux = (desc/100);
-        this.tp= base*aux;
+        this.tp= base-(base*aux);
+
     }
 }

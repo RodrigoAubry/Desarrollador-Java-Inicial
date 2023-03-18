@@ -6,6 +6,7 @@ public class Carrito {
     private Producto[] productos;
     private LocalDate fechaDeCompra;
 
+
     //Constructor
 
     public Carrito(){
@@ -26,12 +27,15 @@ public class Carrito {
     public void setProductos(Producto[] productos) {
         this.productos = productos;
     }
-    public float totalBase(){
-        for (int n = 0; n < 3; n++) {
-            totalBas+=productos[n].getPrecioBase();
-        }
+
+    public float getTotalBas() {
         return totalBas;
     }
 
-
+    public void calcularTotalBase(){
+        this.totalBas=0;
+        for (int n = 0; n<3; n++) {
+            this.totalBas+=productos[n].getPrecioBase();
+        }
+    }
 }

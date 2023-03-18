@@ -15,22 +15,22 @@ public class Main {
 
         Carrito car1=new Carrito();
         car1.setProductos(prod);
+        car1.calcularTotalBase();
+        System.out.println("El precio base es $"+car1.getTotalBas());
 
-        System.out.println("El precio base es $"+car1.totalBase());
-
-        int a=Integer.parseInt(args[0]);
         switch (args[1]){
             case "f": System.out.println("Hay descuento fijo de $"+args[0]);
-            DescuentoFijo df =new DescuentoFijo(car1.totalBase(),Float.parseFloat(args[0]));
+            DescuentoFijo df =new DescuentoFijo(car1.getTotalBas(),Float.parseFloat(args[0]));
             df.calcularDescuento();
             System.out.println("Total a pagar $"+df.getTp());
             break;
             case "p": System.out.println("Hay descuento del "+args[0]+"%");
-            DescuentoPorcentaje dp =new DescuentoPorcentaje(car1.totalBase(),Float.parseFloat(args[0]));
+            DescuentoPorcentaje dp =new DescuentoPorcentaje(car1.getTotalBas(),Float.parseFloat(args[0]));
             dp.calcularDescuento();
             System.out.println("Total a pagar $"+dp.getTp());
             break;
         }
     }
 }
+
 
