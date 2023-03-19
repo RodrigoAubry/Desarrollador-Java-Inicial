@@ -4,6 +4,7 @@ public class Main {
     public static void main(String[] args) {
         LocalDate cumple =LocalDate.of(1990,9,12);
         Persona cliente=new Persona("Juan","Aragorn",cumple);
+        float tope=Float.parseFloat(args[2]); //El tope es un porcentaje del total a pagar
 
         Producto prod[]=new Producto[3];
         prod[0]=new Producto("Jabón en polvo");
@@ -24,13 +25,19 @@ public class Main {
             df.calcularDescuento();
             System.out.println("Total a pagar $"+df.getTp());
             break;
-            case "p": System.out.println("Hay descuento del "+args[0]+"%");
-            DescuentoPorcentaje dp =new DescuentoPorcentaje(car1.getTotalBas(),Float.parseFloat(args[0]));
-            dp.calcularDescuento();
-            System.out.println("Total a pagar $"+dp.getTp());
+            case "p":
+            if (tope<Float.parseFloat(args[0])) {
+                System.out.println("Hay descuento del "+args[2]+"%");
+                DescuentoPorcentajeConTope dpct =new DescuentoPorcentajeConTope(car1.getTotalBas(),tope);
+                dpct.calcularDescuento();
+                System.out.println("Total a pagar $" + dpct.getTp());
+            }else{
+                System.out.println("Hay descuento del "+args[0]+"%");
+                DescuentoPorcentaje dp = new DescuentoPorcentaje(car1.getTotalBas(), Float.parseFloat(args[0]));
+                dp.calcularDescuento();
+                System.out.println("Total a pagar $" + dp.getTp());
+            }
             break;
         }
     }
 }
-
-
