@@ -9,7 +9,10 @@ public class DescuentoFijo extends Descuento{
     //Metodos
 
     @Override
-    protected void calcularDescuento(){
+    protected void calcularDescuento() throws DescuentoSobre0Exception {
+        if(base==0){
+            throw new DescuentoSobre0Exception();
+        }
         this.tp=(base-desc);
     }
 }

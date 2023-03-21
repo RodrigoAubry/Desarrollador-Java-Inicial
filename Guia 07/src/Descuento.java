@@ -1,4 +1,4 @@
-abstract class Descuento {
+abstract class Descuento  {
 
     //Atrivutos
     protected float tp;
@@ -11,5 +11,5 @@ abstract class Descuento {
         return tp;
     }
 
-    protected abstract void calcularDescuento();
+    protected abstract void calcularDescuento() throws DescuentoSobre0Exception;
 }
