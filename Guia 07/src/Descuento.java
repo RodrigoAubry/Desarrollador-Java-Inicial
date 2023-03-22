@@ -11,5 +11,5 @@ abstract class Descuento  {
         return tp;
     }
 
-    protected abstract void calcularDescuento() throws DescuentoSobre0Exception;
+    protected abstract void calcularDescuento() throws DescuentoSobre0Exception,DescuentoNegativoException;
 }

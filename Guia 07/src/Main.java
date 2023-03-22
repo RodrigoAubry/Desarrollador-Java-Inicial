@@ -31,13 +31,23 @@ public class Main {
                 if (tope<Float.parseFloat(args[0])) {
                     System.out.println("Hay descuento del "+args[2]+"%");
                     DescuentoPorcentajeConTope dpct =new DescuentoPorcentajeConTope(car1.getTotalBas(),tope);
-                    dpct.calcularDescuento();
-                    System.out.println("Total a pagar $" + dpct.getTp());
+                    try {
+                        dpct.calcularDescuento();
+                        System.out.println("Total a pagar $" + dpct.getTp());
+                    }catch (DescuentoSobre0Exception e){}
+                     catch (DescuentoNegativoException f){}
+                     catch (Exception a){};
+
                 }else{
                     System.out.println("Hay descuento del "+args[0]+"%");
                     DescuentoPorcentaje dp = new DescuentoPorcentaje(car1.getTotalBas(), Float.parseFloat(args[0]));
-                    dp.calcularDescuento();
-                    System.out.println("Total a pagar $" + dp.getTp());
+                    try {
+                        dp.calcularDescuento();
+                        System.out.println("Total a pagar $" + dp.getTp());
+                    }catch (DescuentoSobre0Exception e){}
+                     catch (DescuentoNegativoException f){}
+                     catch (Exception a){};
+
                 }
                 break;
         }
