@@ -1,3 +1,6 @@
+import javax.sound.midi.Soundbank;
+import java.net.SocketOption;
+import java.security.SignedObject;
 import java.time.LocalDate;
 
 public class Main {
@@ -23,8 +26,7 @@ public class Main {
             try {
                     df.calcularDescuento();
                     System.out.println("Total a pagar $"+df.getTp());
-                }catch (DescuentoSobre0Exception e){}
-                 catch (DescuentoNegativoException f){}
+                }catch (DescuentosException e){}
                  catch (Exception a){};
                 break;
             case "p":
@@ -34,8 +36,7 @@ public class Main {
                     try {
                         dpct.calcularDescuento();
                         System.out.println("Total a pagar $" + dpct.getTp());
-                    }catch (DescuentoSobre0Exception e){}
-                     catch (DescuentoNegativoException f){}
+                    }catch (DescuentosException e){}
                      catch (Exception a){};
 
                 }else{
@@ -44,8 +45,7 @@ public class Main {
                     try {
                         dp.calcularDescuento();
                         System.out.println("Total a pagar $" + dp.getTp());
-                    }catch (DescuentoSobre0Exception e){}
-                     catch (DescuentoNegativoException f){}
+                    }catch (DescuentosException e){}
                      catch (Exception a){};
 
                 }
