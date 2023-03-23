@@ -12,7 +12,7 @@ public class DescuentoFijo extends Descuento{
     protected void calcularDescuento() throws DescuentosException{
         this.tp=(base-desc);
         if(base==0 || tp<0){
-            throw new DescuentosException(base,tp);
+            throw new DescuentosException(base);
         }
     }
 }

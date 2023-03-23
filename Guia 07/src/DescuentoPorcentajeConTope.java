@@ -15,7 +15,7 @@ public class DescuentoPorcentajeConTope extends Descuento {
         float aux = (tope/100);
         this.tp= base-(base*aux);
         if(base==0 || tp<0){
-            throw new DescuentosException(base,tp);
+            throw new DescuentosException(base);
         }
     }
 }
