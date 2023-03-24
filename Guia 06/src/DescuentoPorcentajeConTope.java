@@ -4,15 +4,15 @@ public class DescuentoPorcentajeConTope extends Descuento {
 
     //Constructor
 
-    public DescuentoPorcentajeConTope(float bas,float top) {
-        this.base=bas;
+    public DescuentoPorcentajeConTope(float top) {
         this.tope=top;
     }
 
     //Metodos
     @Override
-    protected void calcularDescuento(){
+    protected float calcularDescuento(float base){
         float aux = (tope/100);
-        this.tp= base-(base*aux);
+        return (base*aux);
+     //   this.tp= base-(base*aux);
     }
 }

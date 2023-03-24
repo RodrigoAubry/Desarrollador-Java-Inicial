@@ -1,15 +1,8 @@
 abstract class Descuento {
-
-    //Atrivutos
-    protected float tp;
+    //Atributos
     protected float desc;
-    protected float base;
 
     //Metodos
 
-    public float getTp() {
-        return tp;
-    }
-
-    protected abstract void calcularDescuento();
+    protected abstract float calcularDescuento(float base);
 }

@@ -1,16 +1,15 @@
-public class DescuentoFijo extends Descuento{
+public class DescuentoFijo extends Descuento {
 
     //Constructor
-    public DescuentoFijo(float bas, float des) {
-        this.desc=des;
-        this.base=bas;
+    public DescuentoFijo(float des) {
+        this.desc = des;
     }
 
     //Metodos
 
     @Override
-    protected void calcularDescuento(){
-        this.tp=(base-desc);
+    protected float calcularDescuento(float base) {
+        return desc;
     }
 }
 

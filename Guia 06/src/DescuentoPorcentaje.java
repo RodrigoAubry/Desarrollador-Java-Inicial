@@ -1,17 +1,16 @@
 public class DescuentoPorcentaje extends Descuento {
 
     //Constructor
-    public DescuentoPorcentaje(float bas, float des) {
-        this.base=bas;
+    public DescuentoPorcentaje(float des) {
         this.desc=des;
     }
 
     //Metodos
 
     @Override
-    protected void calcularDescuento(){
+    protected float calcularDescuento(float base){
         float aux = (desc/100);
-        this.tp= base-(base*aux);
-
+        return (base*aux);
+       // this.tp= base-(base*aux);
     }
 }

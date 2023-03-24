@@ -19,25 +19,6 @@ public class Main {
         car1.calcularTotalBase();
         System.out.println("El precio base es $"+car1.getTotalBas());
 
-        switch (args[1]){
-            case "f": System.out.println("Hay descuento fijo de $"+args[0]);
-            DescuentoFijo df =new DescuentoFijo(car1.getTotalBas(),Float.parseFloat(args[0]));
-            df.calcularDescuento();
-            System.out.println("Total a pagar $"+df.getTp());
-            break;
-            case "p":
-            if (tope<Float.parseFloat(args[0])) {
-                System.out.println("Hay descuento del "+args[2]+"%");
-                DescuentoPorcentajeConTope dpct =new DescuentoPorcentajeConTope(car1.getTotalBas(),tope);
-                dpct.calcularDescuento();
-                System.out.println("Total a pagar $" + dpct.getTp());
-            }else{
-                System.out.println("Hay descuento del "+args[0]+"%");
-                DescuentoPorcentaje dp = new DescuentoPorcentaje(car1.getTotalBas(), Float.parseFloat(args[0]));
-                dp.calcularDescuento();
-                System.out.println("Total a pagar $" + dp.getTp());
-            }
-            break;
-        }
+        System.out.println("Total a pagar $" + car1.totalAPagar(args[1], Float.parseFloat(args[0]),Float.parseFloat(args[2])));
     }
 }
