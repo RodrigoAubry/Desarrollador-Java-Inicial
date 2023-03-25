@@ -1,10 +1,11 @@
 package org.example;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.Date;
-
+@NoArgsConstructor @AllArgsConstructor
 public class Persona {
     @Setter @Getter
     private String nombre;
