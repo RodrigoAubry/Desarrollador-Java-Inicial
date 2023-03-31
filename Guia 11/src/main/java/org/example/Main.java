@@ -16,6 +16,7 @@ public class Main {
         LeerArchivo archivo=new LeerArchivo(ruta);
         Producto prod=new Producto(archivo.getPartesProd());
         String json=objectMapper.writeValueAsString(prod);
+        System.out.println("Tipo de salida: "+args[1]);
         System.out.println(json);
 
     }
